@@ -1,3 +1,9 @@
+package com.example.hnmobiletest
+
+import Author
+import CommentText
+import StoryTitle
+
 data class HighlightResult(
     val author: Author,
     val comment_text: CommentText,

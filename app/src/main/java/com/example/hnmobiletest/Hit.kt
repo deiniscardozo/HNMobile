@@ -1,9 +1,7 @@
 package com.example.hnmobiletest
 
-import HighlightResult
-
 data class Hit(
-    val _highlightResult:HighlightResult,
+    val _highlightResult: HighlightResult,
     val _tags: List<String>,
     val author: String,
     val comment_text: String,
