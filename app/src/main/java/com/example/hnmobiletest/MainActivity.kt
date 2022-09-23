@@ -82,24 +82,6 @@ class MainActivity : AppCompatActivity() {
                             isCurrentlyActive: Boolean
                         )
                         {
-                            Builder(
-                                c,
-                                recyclerView,
-                                viewHolder,
-                                dX,
-                                dY,
-                                actionState,
-                                isCurrentlyActive
-                            )
-                                .addBackgroundColor(
-                                    ContextCompat.getColor(
-                                        this@MainActivity,
-                                        R.color.holo_red_dark
-                                    )
-                                )
-                                .addActionIcon(R.drawable.ic_delete)
-                                .create()
-                                .decorate()
 
                             super.onChildDraw(
                                 c,
