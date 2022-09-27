@@ -4,6 +4,7 @@ import android.R
 import android.content.Intent
 import android.graphics.*
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -12,6 +13,7 @@ import com.example.hnmobiletest.view.adapter.NotifyAdapter
 import com.example.hnmobiletest.databinding.ActivityMainBinding
 import com.example.hnmobiletest.model.api.ApiAdapter
 import com.example.hnmobiletest.model.api.ApiService
+import com.example.hnmobiletest.model.database.HitListRepository
 import com.example.hnmobiletest.model.dataclass.DataClass
 import com.example.hnmobiletest.model.dataclass.Hit
 import com.google.android.material.snackbar.Snackbar
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     var listNotify: MutableList<Hit> = mutableListOf()
     var dataItem: DataClass? = null
     private lateinit var url: String
+    private lateinit var repository:HitListRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
