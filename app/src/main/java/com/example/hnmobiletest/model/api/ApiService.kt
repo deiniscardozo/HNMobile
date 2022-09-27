@@ -10,7 +10,4 @@ interface ApiService {
     @GET("api/v1/search_by_date")
     fun listNotify(@Query("query") query: String) :Call<DataClass>
 
-    @GET("api/v1/search_by_date")
-    fun listHit(@Query("query") query: String) :List<Hit>
-
 }
