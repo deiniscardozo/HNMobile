@@ -1,31 +1,16 @@
 package com.example.hnmobiletest.model.database
 
-import androidx.room.withTransaction
-import com.example.hnmobiletest.model.api.ApiService
+import androidx.annotation.WorkerThread
 import com.example.hnmobiletest.model.dataclass.Hit
-import com.example.hnmobiletest.util.networkBoundResource
-import kotlinx.coroutines.delay
-import javax.inject.Inject
+import kotlinx.coroutines.flow.Flow
 
-class HitListRepository @Inject constructor(
-    private val api: ApiService,
-    private val db: HitListDatabase
-) {
-    private val hitsDao = db.hitDao()
+class HitListRepository(private val hitDao:HitDao) {
 
-    fun getHits() = networkBoundResource(
-        query = {
-            hitsDao.getAllHits()
-        },
-        fetch = {
-            delay(2000)
-           api.listHit("mobile")
-        },
-        saveFetchResult = { HitList: List<Hit> ->
-            db.withTransaction {
-                hitsDao.deleteAllHits()
-                hitsDao.insertHits(HitList)
-            }
-        }
-    )
+   val allHits:Flow<List<Hit>> = hitDao.getAllHits()
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun insert(hit:List<Hit>) {
+        hitDao.insertHits(hit)
+    }
 }
