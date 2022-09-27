@@ -13,6 +13,7 @@ import com.example.hnmobiletest.view.adapter.NotifyAdapter
 import com.example.hnmobiletest.databinding.ActivityMainBinding
 import com.example.hnmobiletest.model.api.ApiAdapter
 import com.example.hnmobiletest.model.api.ApiService
+import com.example.hnmobiletest.model.database.HitListDatabase
 import com.example.hnmobiletest.model.database.HitListRepository
 import com.example.hnmobiletest.model.dataclass.DataClass
 import com.example.hnmobiletest.model.dataclass.Hit
@@ -28,7 +29,6 @@ class MainActivity : AppCompatActivity() {
     var listNotify: MutableList<Hit> = mutableListOf()
     var dataItem: DataClass? = null
     private lateinit var url: String
-    private lateinit var repository:HitListRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         val apiService:ApiService = ApiAdapter.getApiAdapter().create(ApiService::class.java)
         val resultThird: Call<DataClass> = apiService.listNotify("mobile")
+
 
         resultThird.enqueue(object : Callback<DataClass> {
 
