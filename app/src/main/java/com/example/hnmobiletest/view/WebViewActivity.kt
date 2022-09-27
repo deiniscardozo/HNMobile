@@ -1,4 +1,4 @@
-package com.example.hnmobiletest
+package com.example.hnmobiletest.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

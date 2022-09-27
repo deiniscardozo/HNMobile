@@ -1,4 +1,4 @@
-package com.example.hnmobiletest
+package com.example.hnmobiletest.model.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

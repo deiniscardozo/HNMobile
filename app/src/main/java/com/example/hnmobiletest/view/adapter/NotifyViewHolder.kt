@@ -1,20 +1,16 @@
-package com.example.hnmobiletest.adapter
+package com.example.hnmobiletest.view.adapter
 
 import android.annotation.SuppressLint
 import android.os.Build
-import android.util.Log
 import android.view.View
-import android.webkit.WebView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hnmobiletest.Hit
-import com.example.hnmobiletest.MainActivity
+import com.example.hnmobiletest.model.dataclass.Hit
 import com.example.hnmobiletest.databinding.ItemNotifyBinding
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 
 class NotifyViewHolder(view: View): RecyclerView.ViewHolder(view) {
@@ -23,7 +19,7 @@ class NotifyViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     @SuppressLint("SimpleDateFormat")
     @RequiresApi(Build.VERSION_CODES.O)
-    fun render(hitModel: Hit, onClickListener: (Hit) -> Unit) {
+    fun render(hitModel:Hit, onClickListener: (Hit) -> Unit) {
         val dateString = hitModel.created_at
         val cal = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")

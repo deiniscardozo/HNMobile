@@ -1,4 +1,4 @@
-package com.example.hnmobiletest
+package com.example.hnmobiletest.model.dataclass
 
 data class StoryUrl(
     val fullyHighlighted: Boolean,

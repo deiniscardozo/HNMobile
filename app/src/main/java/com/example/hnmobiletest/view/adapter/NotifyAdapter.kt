@@ -1,13 +1,11 @@
-package com.example.hnmobiletest.adapter
+package com.example.hnmobiletest.view.adapter
 
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.webkit.WebView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hnmobiletest.Hit
+import com.example.hnmobiletest.model.dataclass.Hit
 import com.example.hnmobiletest.R
 
 class NotifyAdapter(private val listNotify: List<Hit>,
